@@ -32,16 +32,21 @@
         <header>
             <nav>
                 <menu>
+                    <span id="nav_menu_top"></span>
                     <script>
-                        if (user_data.is_login) {
-                            window.location = "index.html"
+                        var nav_menu_top = document.getElementById("nav_menu_top");
+                        function setLogin() {
+                            if (user_data.is_login) {
+                                window.location = "index.html"
+                            }
+                            else {
+                                nav_menu_top.innerHTML = '<a href="./index.html" rel="nofollow">top</a>';
+                            }
                         }
-                        else {
-                            document.write('<a href="./index.html" rel="nofollow">top</a>');
-                        }
-                    
+                    setLogin()
                         function login () {
                             user_data.is_login = true;
+                            setLogin()
                         }
                     
                     </script>
@@ -50,7 +55,7 @@
         </header>
         
         <div>
-            <div style="width:80%;background-color" onClick="login()">ログイン</div>
+            <div style="width:80%;background-color:black;color:white;height:44px;text-align:center;" onClick="login()">ログイン</div>
         </div>
         
         <footer>
