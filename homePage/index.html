@@ -8,12 +8,26 @@
         <meta name="viewport" content="width=device-width,initial-scale=1"/>
         <style>
             </style>
+        <script>
+            var userData = {
+                title:"名無し",
+                password:"1234",
+                is_login:false,
+            };
+            </script>
     </head>
     <body>
         <header>
             <nav>
                 <menu>
-                    <a href="./index.html" rel="nofollow">sign in</a>
+                    <script>
+                        if (userData.is_login) {
+                            
+                        }
+                        else {
+                            document.write('<a href="./login.html" rel="nofollow">sign in</a>');
+                        }
+                    </script>
                 </menu>
             </nav>
         </header>
