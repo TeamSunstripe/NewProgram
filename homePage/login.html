@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ja" target="_blank">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="robots" content="nofollow" />
+        <title>みーちゃんみお王国 - ログイン</title>
+        <link rel="stylesheet" type="text/css" href="./css/styles.css"/>
+        <meta name="viewport" content="width=device-width,initial-scale=1"/>
+        <style>
+            </style>
+        <script>
+            var user_data = JSON.parse(decodeURIComponent(localStorage.getItem("michanmio_user_data")) );
+                //localStorage.removeItem("michanmio_user_data");
+                /*
+                 var userData = {
+                 title:"名無し",
+                 password:"1234",
+                 is_login:false,
+                 };
+                 */
+        /*
+            var encodeJson = encodeURIComponent(JSON.stringify(userData));
+            alert(encodeJson);
+            userData = JSON.parse( decodeURIComponent(encodeJson) );
+            alert(userData)
+            localStorage.setItem('michanmio_user_data', encodeJson);
+        */
+            </script>
+    </head>
+    <body>
+        ログインページ
+        <header>
+            <nav>
+                <menu>
+                    <script>
+                        if (user_data.is_login) {
+                            window.location = "index.html"
+                        }
+                        else {
+                            document.write('<a href="./index.html" rel="nofollow">top</a>');
+                        }
+                    
+                        function login () {
+                            user_data.is_login = true;
+                        }
+                    
+                    </script>
+                </menu>
+            </nav>
+        </header>
+        
+        <div>
+            <div style="width:80%;background-color" onClick="login()">ログイン</div>
+        </div>
+        
+        <footer>
+            <nav>
+                <menu>
+                </menu>
+            </nav>
+            <div style="clear:both;text-align:center;background-color:black">
+                &copy; 2011 - <script>
+                    var newDate = new Date();
+                        //年・月・日・曜日を取得する
+                        var year = newDate.getFullYear();
+                        document.write(year);
+                    </script> みーちゃんみお王国 制作委員会
+            </div>
+        </footer>
+    </body>
+</html>
+
